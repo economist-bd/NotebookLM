@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { BookOpen, Headphones, Share2, Menu, X, ArrowRight, DollarSign, Cpu, ChevronRight, Home, User } from 'lucide-react';
+import React, { useState } from 'react';
+import { BookOpen, Headphones, Share2, X, ArrowRight, DollarSign, Cpu, ChevronRight, Home, User } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // --- DATA: 30 CHAPTERS CONTENT ---
