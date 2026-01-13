@@ -463,7 +463,7 @@ function App() {
               </div>
             </nav>
 
-            {/* Author Bio Modal (Updated) */}
+            {/* Author Bio Modal (Updated & Cleaned) */}
             {showBio && (
               <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
                 <motion.div 
@@ -482,13 +482,13 @@ function App() {
 
                   {/* Profile Header */}
                   <div className="flex flex-col items-center text-center mt-2">
-                    {/* Image Circle with Gradient Border */}
+                    {/* Image Circle */}
                     <div className="w-24 h-24 mb-4 rounded-full p-1 bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500">
                       <img 
                         src="/author.png" 
                         alt="Monjurul Haque" 
                         className="w-full h-full rounded-full object-cover border-4 border-white bg-gray-100"
-                        onError={(e) => {e.target.src = "https://via.placeholder.com/150"}} // ছবি না থাকলে ডামি দেখাবে
+                        onError={(e) => {e.target.src = "https://via.placeholder.com/150"}} 
                       />
                     </div>
 
@@ -503,7 +503,6 @@ function App() {
 
                   {/* Action Buttons */}
                   <div className="space-y-3">
-                    {/* Live Course Button (Highlighted) */}
                     <a 
                       href="https://demand-supply.vercel.app" 
                       target="_blank" 
@@ -513,7 +512,6 @@ function App() {
                       <span>🚀 লাইভ কোর্স দেখুন</span>
                     </a>
 
-                    {/* Facebook Button */}
                     <a 
                       href="https://www.facebook.com/himel.hemu" 
                       target="_blank" 
@@ -523,7 +521,6 @@ function App() {
                       <span>Follow on Facebook</span>
                     </a>
 
-                    {/* Phone Button */}
                     <a 
                       href="tel:+8801715247588" 
                       className="flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white py-2.5 rounded-xl font-semibold transition-colors shadow-sm"
@@ -534,6 +531,8 @@ function App() {
                 </motion.div>
               </div>
             )}
+          </motion.div>
+        )}
 
         {/* VIEW 3: CHAPTER DETAIL */}
         {view === 'chapter' && (
