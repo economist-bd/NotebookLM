@@ -468,13 +468,14 @@ function App() {
               <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
                 <div className="bg-white rounded-2xl p-6 max-w-sm w-full relative">
                   <button onClick={() => setShowBio(false)} className="absolute top-4 right-4"><X /></button>
-                  <div className="w-16 h-16 bg-blue-600 rounded-full mb-4 flex items-center justify-center text-white text-2xl font-bold">A</div>
-                  <h3 className="text-xl font-bold">Author Bio</h3>
-                  <p className="text-sm text-gray-500 mb-4">AI Business Strategist</p>
+                  <div className="w-16 h-16 bg-blue-600 rounded-full mb-4 flex items-center justify-center text-white text-2xl font-bold">MH Academy</div>
+                  <h3 className="text-xl font-bold">Monjurul Haque</h3>
+                  <p className="text-sm text-gray-500 mb-4">Economist & AI Business Strategist</p>
                   <p className="text-gray-600 text-sm mb-4">
                     আমি জটিল AI টুলসকে আয়ের উৎসে পরিণত করতে সাহায্য করি। এই অ্যাপটি ২০২৫-২৬ সালের সেরা স্ট্র্যাটেজি নিয়ে তৈরি।
                   </p>
                   <button className="w-full bg-blue-600 text-white py-2 rounded-lg text-sm">Follow on Twitter</button>
+                  <button className="w-full bg-blue-600 text-white py-2 rounded-lg text-sm">01715-247588</button>
                 </div>
               </div>
             )}
