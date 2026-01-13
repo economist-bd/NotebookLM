@@ -463,24 +463,77 @@ function App() {
               </div>
             </nav>
 
-            {/* Author Bio Modal (Simple Overlay) */}
+            {/* Author Bio Modal (Updated) */}
             {showBio && (
-              <div className="fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
-                <div className="bg-white rounded-2xl p-6 max-w-sm w-full relative">
-                  <button onClick={() => setShowBio(false)} className="absolute top-4 right-4"><X /></button>
-                  <div className="w-16 h-16 bg-blue-600 rounded-full mb-4 flex items-center justify-center text-white text-2xl font-bold">MH Academy</div>
-                  <h3 className="text-xl font-bold">Monjurul Haque</h3>
-                  <p className="text-sm text-gray-500 mb-4">Economist & AI Business Strategist</p>
-                  <p className="text-gray-600 text-sm mb-4">
-                    আমি জটিল AI টুলসকে আয়ের উৎসে পরিণত করতে সাহায্য করি। এই অ্যাপটি ২০২৫-২৬ সালের সেরা স্ট্র্যাটেজি নিয়ে তৈরি।
-                  </p>
-                  <button className="w-full bg-blue-600 text-white py-2 rounded-lg text-sm">Follow on Twitter</button>
-                  <button className="w-full bg-blue-600 text-white py-2 rounded-lg text-sm">01715-247588</button>
-                </div>
+              <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4">
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  className="bg-white rounded-3xl p-6 max-w-sm w-full relative shadow-2xl border border-gray-100"
+                >
+                  {/* Close Button */}
+                  <button 
+                    onClick={() => setShowBio(false)} 
+                    className="absolute top-4 right-4 p-2 bg-gray-100 hover:bg-gray-200 rounded-full transition-colors"
+                  >
+                    <X size={20} className="text-gray-600" />
+                  </button>
+
+                  {/* Profile Header */}
+                  <div className="flex flex-col items-center text-center mt-2">
+                    {/* Image Circle with Gradient Border */}
+                    <div className="w-24 h-24 mb-4 rounded-full p-1 bg-gradient-to-tr from-blue-500 via-purple-500 to-pink-500">
+                      <img 
+                        src="/author.png" 
+                        alt="Monjurul Haque" 
+                        className="w-full h-full rounded-full object-cover border-4 border-white bg-gray-100"
+                        onError={(e) => {e.target.src = "https://via.placeholder.com/150"}} // ছবি না থাকলে ডামি দেখাবে
+                      />
+                    </div>
+
+                    <h3 className="text-2xl font-bold text-gray-900">Monjurul Haque</h3>
+                    <p className="text-sm font-semibold text-blue-600">Economist & AI Business Strategist</p>
+                    <p className="text-xs text-gray-400 mb-4">Founder, Star Line</p>
+
+                    <p className="text-gray-600 text-sm mb-6 leading-relaxed bg-gray-50 p-3 rounded-xl border border-gray-100">
+                      "আমি জটিল AI টুলসকে আয়ের উৎসে পরিণত করতে সাহায্য করি। এই অ্যাপটি ২০২৫-২৬ সালের সেরা স্ট্র্যাটেজি নিয়ে তৈরি।"
+                    </p>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="space-y-3">
+                    {/* Live Course Button (Highlighted) */}
+                    <a 
+                      href="https://demand-supply.vercel.app" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white py-3 rounded-xl font-bold shadow-lg transform transition hover:scale-105"
+                    >
+                      <span>🚀 লাইভ কোর্স দেখুন</span>
+                    </a>
+
+                    {/* Facebook Button */}
+                    <a 
+                      href="https://www.facebook.com/himel.hemu" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 w-full bg-[#1877F2] hover:bg-[#166fe5] text-white py-2.5 rounded-xl font-semibold transition-colors shadow-sm"
+                    >
+                      <span>Follow on Facebook</span>
+                    </a>
+
+                    {/* Phone Button */}
+                    <a 
+                      href="tel:+8801715247588" 
+                      className="flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white py-2.5 rounded-xl font-semibold transition-colors shadow-sm"
+                    >
+                      <span>📞 01715-247588</span>
+                    </a>
+                  </div>
+                </motion.div>
               </div>
             )}
-          </motion.div>
-        )}
 
         {/* VIEW 3: CHAPTER DETAIL */}
         {view === 'chapter' && (
